@@ -1,0 +1,103 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+
+.nav-list
+    {
+        display: flex;
+        align-content: center;
+    }
+.logo
+    {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+.logo img
+    {
+        width: 40%;
+    }
+.nav-list li
+    {
+        list-style: none;
+        padding: 2%;
+        right: 20%;
+    }
+
+.nav-list li a
+    {
+        direction: none;
+    }
+.cover img 
+    {
+        width: 1550px;
+    }
+.text
+    {
+        position: absolute;
+        top: 15%;
+        right: 10px;
+        color:red;
+    }
+    .btn1
+    {
+        position: absolute;
+        top: 70;
+        right: 250px;
+        padding: 10px;
+        text-transform: uppercase;
+        background-color: rebeccapurple;
+        border: none;
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+
+.btn1:hover
+    {
+        background-color: red;
+        color: white;
+    } 
+/* .box
+    {
+        border: 1px solid transparent;
+        background-color: whitesmoke;
+        height: 50px;
+    }
+ol
+    {
+        float: right;
+    }
+ol li
+    {
+        float: left;
+        width: 100px;
+        position: relative;
+        right:80%;
+        text: Muhammed Teli
+        list-style-type: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+    }
+ol li a 
+    {
+        text-decoration: none;
+        color: black;
+    }
+ol li a:hover
+    {
+        border-bottom: 4px solid red;
+    }
+
+#logo
+    {
+        height: 58px;
+        position: relative;
+        left: 20%;
+    }
+
