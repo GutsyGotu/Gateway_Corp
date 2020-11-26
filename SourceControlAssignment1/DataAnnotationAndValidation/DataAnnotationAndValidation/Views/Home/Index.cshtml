@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Home Page - Employee Registration";
+}
+
+@model DataAnnotationAndValidation.Models.RegistrationModel
+
+<h2>Employee Details</h2>
+
+@using (Html.BeginForm("Details", "Home", FormMethod.Post))
+{
+    <ol>
+        <li>
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name, new { placeholder = "David Marsh" })
+            @Html.ValidationMessageFor(m => m.Name)
+        </li>
+        <li>
+            @Html.LabelFor(m => m.Mobile)
+            @Html.TextBoxFor(m => m.Mobile, new { placeholder = "91 9999 999 999" })
+            @Html.ValidationMessageFor(m => m.Mobile)
+        </li>
+        <li>
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email, new { placeholder = "example@example.com" })
+            @Html.ValidationMessageFor(m => m.Email)
+        </li>
+        <li>
+            @Html.LabelFor(m => m.ConfirmEmail)
+            @Html.TextBoxFor(m => m.ConfirmEmail, new { placeholder = "example@example.com" })
+            @Html.ValidationMessageFor(m => m.ConfirmEmail)
+        </li>
+        <li>
+            @Html.LabelFor(m => m.Age)
+            @Html.TextBoxFor(m => m.Age, new { placeholder = "Your Age" })
+            @Html.ValidationMessageFor(m => m.Age)
+        </li>
+    </ol>
+    <input type="submit" value="Save Employee Details" />
+}
+
+<h3 style="color:green">Details</h3>
+<h4 style="color:green">
+    <b>
+        Name: @ViewBag.name<br />
+        Mobile: @ViewBag.mobile<br />
+        Email: @ViewBag.email<br />
+        Age: @ViewBag.age
+    </b>
+</h4>
+
