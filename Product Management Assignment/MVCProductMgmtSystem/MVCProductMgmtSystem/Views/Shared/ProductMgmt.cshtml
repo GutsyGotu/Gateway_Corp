@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Product Management System</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="~/Content/css/simple-sidebar.css" rel="stylesheet">
+
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <style>
+        .m {
+            padding-left: 15px;
+        }
+       
+    </style>
+
+</head>
+
+<body>
+
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-dark border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading" style="color: white"><center><b>Product Management</b> </center> <center><b>System</b></center> </div>
+            <div class="list-group list-group-flush">
+                
+                    @Html.ActionLink("Product List","Index","Home",new { @class="list-group-item list-group-item-action bg-dark", @style="color: white"})
+                
+               
+                    @Html.ActionLink("Add Product ","Create","Home", new { @class="list-group-item list-group-item-action bg-dark",@style="color: white"  }) 
+                
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <button class="btn btn-primary" id="menu-toggle">Menu</button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" ></div>
+                    
+                    @if (Session["UserId"] != null)
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>@Html.ActionLink("Logout", "Logout", "Login", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        </ul>
+                    }
+                   
+
+</nav>
+            <div class="m">
+                
+                @RenderBody()
+            </div>
+        </div>
+        </div>
+        <!-- /#wrapper -->
+        <!-- Bootstrap core JavaScript -->
+        <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+        <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Menu Toggle Script -->
+        <script>
+      $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+        </script>
+</body>
+</html>
+

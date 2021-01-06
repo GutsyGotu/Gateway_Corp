@@ -1,0 +1,144 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<MVCProductMgmtSystem.Models.ProductL>
+
+@{
+    Layout = "~/Views/Shared/ProductMgmt.cshtml";
+
+}
+
+@if (Session["UserId"] == null)
+{
+    Response.Redirect("~/Login/Login");
+}
+
+<h2> Product List</h2>
+<link href="~/Content/toastr.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+
+
+@if (Request.Cookies.AllKeys.Contains("CookieAdd"))
+{
+    <script>
+        $(document).ready(function () {
+            toastr["success"]("Product Added Successfully! ")
+        })
+    </script>
+}
+
+@if (Request.Cookies.AllKeys.Contains("CookieEdit"))
+{
+    <script>
+        $(document).ready(function () {
+            toastr["success"]("Product Edited Successfully! ")
+        })
+    </script>
+}
+
+
+<p>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <b> Search By: </b>
+        @Html.RadioButton("SearchBy", "Name", true) <text>Name</text>
+        @Html.RadioButton("SearchBy", "Category") <text>Category</text> <br />
+        <div class="row">
+            <div class="col-md-8">
+                @Html.TextBox("Search")  <button type="submit" class="btn-outline-secondary">Search</button>
+            </div>
+
+
+            <div class="col-md-4">
+                @Html.TextBox("AdvancedSearch") <button type="submit" class="btn-outline-secondary">Advanced Search</button>
+            </div>
+        </div>
+
+    }
+
+</p>
+
+@using (Html.BeginForm("DeleteAll", "Home", FormMethod.Post))
+{
+    <table class="table">
+        <tr>
+
+            <th>
+                Delete
+            </th>
+
+            <th>
+
+                @Html.ActionLink("Name", "Index", new { SortBy = ViewBag.SortNameParameter, SearchBy = Request.QueryString["SearchBy"], Search = Request["Search"] })
+            </th>
+            <th>
+                @Html.ActionLink("Category", "Index", new { SortBy = ViewBag.SortCategoryParameter, SearchBy = Request.QueryString["SearchBy"], Search = Request["Search"] })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ShortDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().SmallImage)
+            </th>
+            <th></th>
+        </tr>
+
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="8"> No record matches the search crteria </td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="Id" value="@item.Id" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShortDescription)
+                    </td>
+
+                    <td>
+                        <img src="@Url.Content(item.SmallImage)" width="150" height="150" />
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "glyphicon glyphicon-erase", id = "del", onclick = "return confirm('Are you sure you want to delete?');" })
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+    <input type="submit" value="Delete Multiple Record(s)" class="btn-danger" />
+    @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, SearchBy = Request.QueryString["SearchBy"], Search = Request.QueryString["Search"], SortBy = Request.QueryString["SortBy"] }),
+     new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })
+
+
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#product').DataTable();
+    });
+</script>
+
+<script src="~/Scripts/toast.min.js"></script>
