@@ -1,0 +1,605 @@
+{
+	"info": {
+		"_postman_id": "24d91b78-92ba-49a3-b593-4f4346ab904d",
+		"name": "HotelManagmentSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:44373/api/HMS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"HotelName\":\"Hotel Shree Gopal Residency\",\r\n\"Address\":\"B1, 3rd Floor, Galaxy Signature Complex, Science City Road, Ahmedabad 380060 India\",\r\n\"City\":\"Ahmedabad\",\r\n\"Pincode\":\"380060\",\r\n\"ContactNumber\":9664560601,\r\n\"Contactperson\":\"Meet Shah\",\r\n\"CreatedBy\":\"Meet Shah\",\r\n\"Website\":\"meetshah.com\",\r\n\"Facebook\":\"Hotel Shree Gopal Residency\",\r\n\"Twitter\":\"Hotel Shree Gopal Residency\",\r\n\"IsActive\":\"0\",\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMS",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMS",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMS/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMS/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMS",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMS/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n\"HotelName\":\"Capital O Hotel Unity\",\r\n\"Address\":\"Shivam Arcade 3rd Floor Near S G Highway R C Technical Road, Opp Nirman Tower, Ahmedabad 380061 India\",\r\n\"City\":\"Ahmedabad\",\r\n\"Pincode\":\"380061\",\r\n\"ContactNumber\":\"9664560601\",\r\n\"Contactperson\":\"Meet Shah\",\r\n\"CreatedBy\":\"Meet Shah\",\r\n\"Website\":\"meetshah.com\",\r\n\"Facebook\":\"Capital O Hotel Unity\",\r\n\"Twitter\":\"Capital O Hotel Unity\",\r\n\"IsActive\":\"1\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMS/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMS",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMS/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMS/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMS",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMS/2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMS/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMS",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMS/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMS/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMS",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMS/",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"Hotel_Id\": 3,\r\n        \"HotelName\": \"OYO 2252 Hotel Double Bless\",\r\n        \"Address\": \"IBS House, 5th Floor Near Grand Bhagwati, Ahmedabad 380054 India\",\r\n        \"City\": \"Ahmedabad\",\r\n        \"Pincode\": \"380054\",\r\n        \"ContactNumer\": 9664560601,\r\n        \"ContactPerson\": \"Meet Shah\",\r\n        \"Website\": \"www.bless.com\",\r\n        \"Facebook\": \"Capital O Hotel Unity\",\r\n        \"Twitter\": \"Capital O Hotel Unity\",\r\n        \"IsActive\": \"1\",\r\n         \"CreatedBy\": \"Meet Shah\",\r\n\r\n        \"UpdatedBy\": \"Meet Shah\",\r\n        \"Books\": [],\r\n        \"Rooms\": []\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMS/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMS",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMS/",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"Hotel_Id\": 3,\r\n        \"HotelName\": \"OYO 2252 Hotel Double Bless\",\r\n        \"Address\": \"IBS House, 5th Floor Near Grand Bhagwati, Ahmedabad 380054 India\",\r\n        \"City\": \"Ahmedabad\",\r\n        \"Pincode\": \"380054\",\r\n        \"ContactNumer\": 9664560601,\r\n        \"ContactPerson\": \"Meet Shah\",\r\n        \"Website\": \"www.bless.com\",\r\n        \"Facebook\": \"Hotel Double Bless\",\r\n        \"Twitter\": \"Hotel Double Bless\",\r\n        \"IsActive\": \"1\",\r\n         \"CreatedBy\": \"Meet Shah\",\r\n\r\n        \"UpdatedBy\": \"Meet Shah\",\r\n        \"Books\": [],\r\n        \"Rooms\": []\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMS/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMS",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMS/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMS/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMS",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMSROOM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n     \"Room_Id\":1,\r\n     \"Hotel_Id\":1,\r\n     \"RoomName\":\"Double Bad Premium\",\r\n     \"Category\":\"Medium\",\r\n     \"Price\":\"2500\",\r\n     \"IsActive\":\"1\",\r\n     \"CreatedBy\":\"Meet Shah\"\r\n\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMSROOM",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMSROOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMSROOM",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMSROOM",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMSROOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMSROOM/0",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"Room_Id\": 1,\r\n        \"RoomName\": \"Double Bad Premium\",\r\n        \"Category\": \"Medium\",\r\n        \"Price\": \"2500\",\r\n        \"IsActive\": \"1\",\r\n        \"CreateDate\": \"2021-01-14T14:04:17.303\",\r\n        \"CreatedBy\": \"Meet Shah\",\r\n        \"UpdateDate\": null,\r\n        \"UpdatedBy\": \"Meet Shah\",\r\n        \"Hotel_Id\": 1,\r\n        \"Books\": [],\r\n        \"Hotel\": null\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMSROOM/0",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMSROOM",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMSROOM/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMSROOM/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMSROOM",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMSBOOK/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n     \"Room_Id\": 1, \r\n     \"Hotel_Id\":1,\r\n     \"StatusOfBooking\":\"Close\",\r\n     \"IsActive\":\"1\",\r\n     \"BookingDate\": \"12-02-2020\"\r\n\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMSBOOK/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMSBOOK",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMSBOOK/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMSBOOK/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMSBOOK",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMSBOOK/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMSBOOK/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMSBOOK",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMSBOOK/6",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMSBOOK/6",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMSBOOK",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44373/api/HMSBOOK/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44373/api/HMSBOOK/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44373",
+					"path": [
+						"api",
+						"HMSBOOK",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
