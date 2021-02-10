@@ -1,0 +1,7 @@
+NuGet install:
+Install-Package AspNetCoreRateLimit
+
+Modified Startup.cs
+
+Applied General and Custom settings in appsettings.json
+"IpRateLimiting" & "IpRateLimitPolicies"

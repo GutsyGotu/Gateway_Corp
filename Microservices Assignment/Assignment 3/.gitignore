@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/CommonObjects/bin/Debug/netcoreapp3.1
+/CommonObjects/obj
+/OrderAPI/bin/Debug/netcoreapp3.1
+/OrderAPI/obj
+/OrderEntities/bin/Debug/netcoreapp3.1
+/OrderEntities/obj
+/RestaurantAPI/bin/Debug/netcoreapp3.1
+/RestaurantAPI/obj
+/RestaurantEntities/bin/Debug/netcoreapp3.1
+/RestaurantEntities/obj
+/Web.HttpAggregator/bin/Debug/netcoreapp3.1
+/Web.HttpAggregator/obj
