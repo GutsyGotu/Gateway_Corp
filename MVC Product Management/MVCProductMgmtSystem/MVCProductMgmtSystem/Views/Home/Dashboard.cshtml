@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/ProductMgmt.cshtml";
+}
+
+    <style>
+        .l {
+            margin-top: 150px;
+        }
+    </style>
+
+
+    @Html.Raw(TempData["LoginSuccessMsg"])
+
+<h2>Dashboard</h2>
+
+<center><h3 class="l">Welcome @Session["Name"]</h3></center>
+
+

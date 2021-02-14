@@ -1,0 +1,88 @@
+﻿@model MVCProductMgmtSystem.Models.ProductL
+
+@{
+       Layout = "~/Views/Shared/ProductMgmt.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <button type="submit" class="btn btn-outline-info float-right">Back to List</button>
+    }
+</div>
+
+<div>
+    <h4>of the Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LongDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LongDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SmallImage)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.SmallImage)" width="250" height="250" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LargeImage)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.LargeImage)" width="250" height="250" alt="NA"/>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id },new { @class="btn btn-info"}) 
+</p>

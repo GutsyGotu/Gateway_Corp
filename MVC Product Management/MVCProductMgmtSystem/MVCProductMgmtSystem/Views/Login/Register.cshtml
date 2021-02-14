@@ -1,0 +1,130 @@
+﻿@model MVCProductMgmtSystem.Models.LoginReg
+
+@{
+    ViewBag.Title = "Register";
+
+}
+<style>
+   td{
+       height:10px;
+   }
+   .k{
+       padding-right:40px;
+   }
+
+</style>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<div class="row" style="padding:150px; padding-left:550px;">
+
+     <div class="col-md-6">
+     <div style="padding:10px; align-content:center">
+
+        @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                       <table>
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <tr>
+                                <td colspan="2" class="text-center" style="font-size:25px;"> <h1>SIGN UP</h1> </td>
+                            </tr>
+                            <tr><td></td></tr>
+
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-12" })
+                                </td>
+                                <td>  
+                                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter First Name" } }) 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="right" class="k">   
+                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" }) 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>     
+                                    @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-12" }) 
+                                </td>
+                                <td>     
+                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Last Name" } }) 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="right" class="k">
+                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" }) 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>      
+                                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-12" }) 
+                                </td>
+                                <td>      
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter your Email Id" } }) 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center" style="padding-left:110px;">       
+                                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" }) 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>    
+                                     @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-12" }) 
+                                </td>
+                                <td>     
+                                     @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter your Password" } }) 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="right" class="k">
+                                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" }) 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>        
+                                     @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-12" }) 
+                                </td>
+                                <td>     
+                                     @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", @placeholder = "Re-enter your Password" } })  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="right">    
+                                     @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" }) 
+                                </td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td colspan="2" align="center" style="padding-left:50px;">
+                                    <input type="submit" value="Sign up" class="btn btn-info" />
+                                    <input type="reset" value="Reset" class="btn btn-secondary" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <label class="label-success">@ViewBag.SuccessMsg</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <label class="label-danger">@ViewBag.DuplicateMsg</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2" align="center">
+                                    Already Registered?
+                                       @Html.ActionLink("Sign in here", "Login")
+                                </td>
+                            </tr>
+                        </table>
+                }
+            </div>
+        </div>
+    </div>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
