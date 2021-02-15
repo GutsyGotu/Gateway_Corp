@@ -1,0 +1,43 @@
+﻿@model SBS.Model.Vehicle
+
+@{
+    ViewBag.Title = "VehicleProfile";
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<h2>Vehicle details</h2>
+
+<div>
+    <hr />
+    <div class="dashboard_main">
+        <div class="row">
+            <div class="col-md-3">
+                <label class="label">@Html.DisplayNameFor(model => model.LicensePlate)</label>
+                <div class="label_text"> @Html.DisplayFor(model => model.LicensePlate)</div>
+            </div>
+            <div class="col-md-3">
+                <label class="label">@Html.DisplayNameFor(model => model.Make)</label>
+                <div class="label_text"> @Html.DisplayFor(model => model.Make)</div>
+            </div>
+            <div class="col-md-3">
+                <label class="label">@Html.DisplayNameFor(model => model.Model)</label>
+                <div class="label_text"> @Html.DisplayFor(model => model.Model)</div>
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-md-3">
+                <label class="label">@Html.DisplayNameFor(model => model.ChasisNo)</label>
+                <div class="label_text"> @Html.DisplayFor(model => model.ChasisNo)</div>
+            </div>
+            <div class="col-md-3">
+                <label class="label">@Html.DisplayNameFor(model => model.RegistrationDate)</label>
+                <div class="label_text"> @Html.DisplayFor(model => model.RegistrationDate)</div>
+            </div>
+
+        </div>
+    </div>
+    
+</div><br />
+<p>
+    @Html.ActionLink("Edit Vehicle", "Edit", new { id = Model.Id },new { @class="btn btn-sm btn-info mr-2"}) 
+    @Html.ActionLink("Vehicle List", "Index",null, new { @class = "btn btn-sm btn-success" })
+</p>

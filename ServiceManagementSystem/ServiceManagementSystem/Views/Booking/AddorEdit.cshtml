@@ -1,0 +1,78 @@
+﻿@model Service_Booking_System.ViewModel.BookingViewModel
+
+@{
+    ViewBag.Title = "AddorEdit";
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<h2>Add Booking</h2>
+
+
+@using (Html.BeginForm("AddorEdit","Booking",FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.booking.ServiceId, htmlAttributes: new { @class = "control-label col-md-6" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.booking.ServiceId, new SelectList(Model.services, "Id", "Name"), new { @class = "form-control col-md-12" })
+                @*@Html.EditorFor(model => model.booking.ServiceId, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.booking.ServiceId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.booking.VehicleId, htmlAttributes: new { @class = "control-label col-md-6" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.booking.VehicleId, new SelectList(Model.vehicles, "Id", " LicensePlate"), new { @class = "form-control col-md-12" })
+
+                @*@Html.EditorFor(model => model.booking.VehicleId, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.booking.VehicleId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </div>
+        
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.booking.BookingStart, htmlAttributes: new { @class = "control-label col-md-6" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.booking.BookingStart, new { type = "date", @class = "formcontrol" })
+
+                @*@Html.EditorFor(model => model.booking.BookingStart, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.booking.BookingStart, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.booking.BookingEnd, htmlAttributes: new { @class = "control-label col-md-6" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.booking.BookingEnd, new { type = "date" , @class = "formcontrol" })
+                @*<input type="date" id="last-start-date" value="@string.Format("{0:yyyy-MM-dd}", Model.booking.BookingEnd)" class="form-control" />*@
+                @*@Html.TextBoxFor(model => model.booking.BookingEnd,new { type="date"} ,new { htmlAttributes = new { @class = "form-control" } }*@
+                @Html.ValidationMessageFor(model => model.booking.BookingEnd, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </div>
+        
+       <hr /><br />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add Booking" class="btn btn-success btn-sm mr-2" />
+                @Html.ActionLink("Back to Bookings", "Index",null,new { @class="btn btn-info btn-sm"})
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

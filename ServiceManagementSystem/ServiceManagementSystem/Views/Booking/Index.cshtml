@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SBS.Model.Booking>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<h2 class="text-center">My Bookings</h2>
+
+<p>
+    
+        <a class="btn btn-sm btn-success" href="@Url.Action("AddorEdit", "Booking")"><i class="fa fa-plus "></i> New Booking</a>
+  
+</p>
+<table class="table table-bordered text-center" >
+    <tr class="bg-dark text-white">
+        <th>
+            Service
+        </th>
+        <th>
+            Mechanic
+        </th>
+        <th>
+            Vehicle Number
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingEnd)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Service.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mechanic.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle.LicensePlate)
+        </td>
+        <td>
+            @Convert.ToDateTime(item.BookingStart).ToString("dd/MM/yyyy")
+        </td>
+        <td>
+            @Convert.ToDateTime(item.BookingEnd).ToString("dd/MM/yyyy")
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new { @class = "btn btn-sm btn-info" }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new { @class = "btn btn-sm btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

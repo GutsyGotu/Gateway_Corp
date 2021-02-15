@@ -1,0 +1,61 @@
+﻿@model SBS.Model.Customer
+
+@{
+    ViewBag.Title = "UserProfile";
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<h2>Customer Dashboard</h2>
+
+<div>
+    
+    <hr />
+    <div class="dashboard_main">
+        <div class="row">
+            <div class="col-md-3">
+                <label class="label">Customer Number</label>
+                <div class="label_text"> @Html.DisplayFor(model => model.CustomerNo)</div>
+            </div>
+            <div class="col-md-3">
+                <label class="label">Name</label>
+                <div class="label_text"> @Html.DisplayFor(model => model.Name)</div>
+            </div>
+            <div class="col-md-3">
+                <label class="label">Email</label>
+                <div class="label_text"> @Html.DisplayFor(model => model.Email)</div>
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-md-3">
+                <label class="label">Contact</label>
+                <div class="label_text"> @Html.DisplayFor(model => model.Contact)</div>
+            </div>
+            <div class="col-md-3">
+                <label class="label">Home Contact</label>
+                <div class="label_text"> @Html.DisplayFor(model => model.HomeContact)</div>
+            </div>
+
+        </div><br />
+              <div class="row">
+                  <div class="col-md-3">
+                      <label class="label">Address 1</label>
+                      <div class="label_text"> @Html.DisplayFor(model => model.Address1)</div>
+                  </div>
+                  <div class="col-md-3">
+                      <label class="label">Address 2</label>
+                      <div class="label_text"> @Html.DisplayFor(model => model.Address2)</div>
+                  </div>
+                  <div class="col-md-3">
+                      <label class="label">Zip Code</label>
+                      <div class="label_text"> @Html.DisplayFor(model => model.ZipCode)</div>
+                  </div>
+              </div>
+    </div>
+    
+
+   
+</div>
+<br /><br />
+<p>
+    @Html.ActionLink("Edit Profile", "AddorEdit", new { id = Model.Id },new{@class="btn btn-primary btn-sm mr-2"}) 
+    @Html.ActionLink("Change Password", "Index", new { id = Model.Id }, new { @class = "btn btn-success btn-sm mr-2" })
+</p>

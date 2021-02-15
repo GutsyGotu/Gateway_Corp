@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+@{
+    ViewBag.Name = Session["name"];
+    ViewBag.Id = Session["id"];
+}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-primary navbar-dark fixed-top shadow-sm main-nav">
+        @Html.ActionLink("Service Booking", "Index", "Home", null, new { @class = "navbar-brand" })
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarCollapse">
+            <div class="navbar-nav mr-auto">
+                @Html.ActionLink("Home", "Index", "Customer", null, new { @class = "nav-item nav-link active" })
+                @Html.ActionLink("Customer", "Index", "Customer", null, new { @class = "nav-item nav-link active" })
+                @Html.ActionLink("Vehicle", "Index", "Vehicle", null, new { @class = "nav-item nav-link active" })
+                @Html.ActionLink("Mechanic", "Index", "Mechanic", null, new { @class = "nav-item nav-link active" })
+                @Html.ActionLink("Service", "Index", "Service", null, new { @class = "nav-item nav-link active" })
+                @Html.ActionLink("Bookings", "Index", "Booking", null, new { @class = "nav-item nav-link active" })
+                @*@if (Session["username"] != null)
+                    {
+                        @Html.ActionLink("Product List", "Index", "Product", null, new { @class = "nav-item nav-link active" })
+                        @Html.ActionLink("Add Product", "AddorEdit", "Product", null, new { @class = "nav-item nav-link active" })
+                    }*@
+            </div>
+            <div class="navbar-nav">
+
+                @if (Session["user"] == null)
+                {
+                    @Html.ActionLink("Register", "Register", "Account", null, new { @class = "nav-item nav-link " })
+                    @Html.ActionLink("Login", "Login", "Account", null, new { @class = "nav-item nav-link " })
+                }
+                else
+                {
+                    <a class="nav-link" href="@Url.Action("UserProfile", "Customer", new { id = ViewBag.Id })">Hello @ViewBag.Name </a>
+                    @Html.ActionLink("Logout", "Logout", "Account", null, new { @class = "nav-item nav-link " })
+                }
+
+
+
+            </div>
+
+        </div>
+    </nav>
+    <div class="container body-content" style="margin-top:90px">
+        @RenderBody()
+
+
+    </div>
+    <footer>
+
+        <div>&copy; @DateTime.Now.Year - My ASP.NET Application</div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
